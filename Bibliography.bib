@@ -1,0 +1,69 @@
+@article{yoon_lif_2017,
+	title = {{LIF} and {Simplified} {SRM} {Neurons} {Encode} {Signals} {Into} {Spikes} via a {Form} of {Asynchronous} {Pulse} {Sigma}-{Delta} {Modulation}},
+	volume = {28},
+	issn = {2162-2388},
+	url = {https://ieeexplore.ieee.org/document/7419261},
+	doi = {10.1109/TNNLS.2016.2526029},
+	abstract = {We show how two spiking neuron models encode continuous-time signals into spikes (action potentials, time-encoded pulses, or point processes) using a special form of sigma-delta modulation (SDM). In particular, we show that the well-known leaky integrate-and-fire (LIF) neuron and the simplified spike response model (SRM0) neuron encode the continuous-time signals into spikes via a proposed asynchronous pulse SDM (APSDM) scheme. The encoder is clock free using level-crossing sampling with a single-level quantizer, unipolar signaling, differential coding, and pulse-shaping filters. The decoder, in the form of a low-pass filter or bandpass smoothing filter, can be fed with the spikes to reconstruct an estimate of the signal. The density of the spikes reflects the amplitude of the encoded signal. Numerical examples illustrating the concepts and the signaling efficiency of APSDM vis-à-vis SDM for comparable reconstruction accuracies are presented. We anticipate these results will facilitate the design of spiking neurons and spiking neural networks as well as cross fertilizations between the fields of neural coding and the SDM.},
+	number = {5},
+	urldate = {2026-11-06},
+	journal = {IEEE Transactions on Neural Networks and Learning Systems},
+	author = {Yoon, Young C.},
+	month = may,
+	year = {2017},
+	keywords = {Adaptation models, Asynchronous pulse sigma–delta modulation (APSDM), Biological neural networks, Computational modeling, Decoding, differential coding, Encoding, leaky integrate-and-fire (LIF) neurons, level-crossing sampling and Lebesgue sampling, neural coding, Neurons, Program processors, spike response model (SRM) neurons, spiking neural networks (SNNs), spiking neurons},
+	pages = {1192--1205},
+}
+
+
+@book{gerstner_spiking_2002,
+	title = {Spiking {Neuron} {Models}: {Single} {Neurons}, {Populations}, {Plasticity}},
+	publisher = {Cambridge University Press},
+	author = {Gerstner, Wulfram and Kistler, Werner M.},
+	year = {2002},
+	file = {PDF:/home/lesage/Zotero/storage/U8RGAQMN/Gerstner and Kistler - 2002 - Spiking Neuron Models Single Neurons, Populations, Plasticity.pdf:application/pdf},
+}
+
+
+@article{schindler_linear_1974,
+	title = {Linear, {Nonlinear}, and {Adaptive} {Delta} {Modulation}},
+	volume = {22},
+	issn = {1558-0857},
+	url = {https://ieeexplore.ieee.org/document/1092119},
+	doi = {10.1109/TCOM.1974.1092119},
+	abstract = {The paper treats linear and nonlinear methods that refine the delta modulation process. These methods improve the quality of the decoded signal at a given transmission rate. Two linear processes are analyzed. The first one matches the source signal to the coder for minimum weighted noise in the decoded signal. The second one influences the signal which is fed to the comparator; it shapes the spectrum of the quantization noise desirably. Two nonlinear methods used in the delta modulation process are discussed. The first achieves a best possible prediction of the future signal from past binary decisions and thus a reduction of the error signal. The methods of the second type make the coder adaptive to variations in the power level of the source signal. This results in a large dynamic range of the coding system. A comparison of the various methods is made and a coding system for speech signals, based on a suitable combination of these methods, is described.},
+	number = {11},
+	urldate = {2026-11-06},
+	journal = {IEEE Transactions on Communications},
+	author = {Schindler, H.},
+	month = nov,
+	year = {1974},
+	keywords = {Algorithm design and analysis, Decoding, Delta modulation, Dynamic range, Noise shaping, Pulse modulation, Quantization, Shape, Signal processing, Size control},
+	pages = {1807--1823},
+	file = {Full Text PDF:/home/lesage/Zotero/storage/52SU5JUH/Schindler - 1974 - Linear, Nonlinear, and Adaptive Delta Modulation.pdf:application/pdf},
+}
+
+
+@article{kikkert_asynchronous_1975,
+	title = {Asynchronous {Delta} {Sigma} {Modulation}},
+	volume = {36},
+	author = {Kikkert, Cornelis and Miller, D.},
+	month = apr,
+	year = {1975},
+}
+
+
+@inproceedings{chklovskii_neuronal_2012,
+	address = {Red Hook, NY, USA},
+	series = {{NIPS}'12},
+	title = {Neuronal spike generation mechanism as an oversampling, noise-shaping {A}-to-{D} converter},
+	volume = {1},
+	abstract = {We test the hypothesis that the neuronal spike generation mechanism is an analog-to-digital (AD) converter encoding rectified low-pass filtered summed synaptic currents into a spike train linearly decodable in post-synaptic neurons. Faithful encoding of an analog waveform by a binary signal requires that the spike generation mechanism has a sampling rate exceeding the Nyquist rate of the analog signal. Such oversampling is consistent with the experimental observation that the precision of the spikegeneration mechanism is an order of magnitude greater than the cut-off frequency of low-pass filtering in dendrites. Additional improvement in the coding accuracy may be achieved by noise-shaping, a technique used in signal processing. If noise-shaping were used in neurons, it would reduce coding error relative to Poisson spike generator for frequencies below Nyquist by introducing correlations into spike times. By using experimental data from three different classes of neurons, we demonstrate that biological neurons utilize noise-shaping. Therefore, the spike-generation mechanism can be viewed as an oversampling and noise-shaping AD converter.},
+	urldate = {2026-11-06},
+	booktitle = {Proceedings of the 26th {International} {Conference} on {Neural} {Information} {Processing} {Systems} - {Volume} 1},
+	publisher = {Curran Associates Inc.},
+	author = {Chklovskii, Dmitri B. and Soudry, Daniel},
+	month = dec,
+	year = {2012},
+	pages = {503--511},
+}

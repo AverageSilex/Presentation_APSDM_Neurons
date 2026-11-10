@@ -1,0 +1,228 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{pgfpages}
+
+\usepackage{datetime}
+\newdateformat{mydate}{\THEYEAR-\twodigit{\THEMONTH}-\twodigit{\THEDAY}}
+
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{Bibliography.bib}
+\renewcommand{\bibfont}{\tiny}
+
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{animate}
+\usepackage{appendixnumberbeamer}
+\usepackage{etoolbox}
+\usepackage{adjustbox}
+\usepackage{multimedia}
+
+
+\usepackage[font=footnotesize]{caption}
+\usepackage{color, colortbl}
+\usepackage{multirow}
+
+% \usepackage[acronym]{glossaries}
+% \makenoidxglossaries
+% \input{acronym.tex}
+
+\usetheme{Warsaw}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\makeatletter
+\pgfdeclareverticalshading[lower.bg,upper.bg]{bmb@transition}{200cm}{%
+  color(0pt)=(lower.bg); color(2pt)=(lower.bg)
+}
+\makeatother
+
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\definecolor{unibe_white}{RGB}{243,252,240} % #f3fcf0
+\definecolor{unibe_black}{RGB}{19, 17, 16} % #131110
+\definecolor{unibe_prim}{RGB}{226, 0, 43} % #e2002b
+\definecolor{unibe_bis}{RGB}{234, 144, 16} % #ea9010
+\definecolor{unibe_ter}{RGB}{255, 210, 63} % #ffd23f
+
+% \definecolor{unibe_prim_high}{RGB}{255, 235, 238}
+% \definecolor{unibe_prim_low}{RGB}{102, 0, 19}
+
+\setbeamertemplate{frametitle}[default]
+
+\setbeamercolor{normal text}{fg=unibe_white}
+\usebeamercolor[fg]{normal text}
+\usebeamercolor[bg]{normal text}
+
+\setbeamercolor{background canvas}{bg=unibe_black}
+
+\setbeamercolor{structure}{fg=unibe_white}
+\setbeamercolor{frametitle}{bg=unibe_black, fg=unibe_white}
+\setbeamercolor{frametitle right}{bg=unibe_black, fg=unibe_white}
+% \setbeamercolor{footlinecolor}{fg=unibe_black,bg=unibe_white}
+
+\setbeamertemplate{itemize item}{\scalebox{0.45}{$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{{$\circ$}}
+\setbeamertemplate{enumerate item}{\roman{enumi}}
+
+\newenvironment<>{box_default}[1]{%
+  \setbeamercolor{block title}{use=unibe_white,fg=unibe_black,bg=unibe_white}%
+  \setbeamercolor{block body}{bg=unibe_black}
+  \setbeamercolor{itemize item}{fg=unibe_white}
+  \setbeamercolor{itemize subitem}{fg=unibe_white}
+  \begin{block}#2{\centering \textbf{#1}}}{\end{block}}
+
+% \newenvironment<>{box_col_prim}[1]{%
+%   \setbeamertemplate{block title}[shadow=false]
+%   \setbeamercolor{block title}{use=unibe_prim,fg=unibe_white,bg=unibe_prim}
+%   \setbeamercolor{block body}{bg=unibe_prim_high, fg=unibe_prim_low}
+%   \setbeamercolor{itemize item}{fg=unibe_prim_low}
+%   \setbeamercolor{itemize subitem}{fg=unibe_prim_low}
+%   \begin{block}#2{\centering \textbf{#1}}}{\end{block}}
+
+\newenvironment<>{box_prim}[1]{%
+  \setbeamercolor{block title}{use=unibe_prim,fg=unibe_white,bg=unibe_prim}%
+  \setbeamercolor{block body}{bg=unibe_black}
+  \setbeamercolor{itemize item}{fg=unibe_prim}
+  \setbeamercolor{itemize subitem}{fg=unibe_prim}
+  \begin{block}#2{\centering \textbf{#1}}}{\end{block}}
+
+\newenvironment<>{box_bis}[1]{%
+  \setbeamercolor{block title}{use=unibe_bis,fg=unibe_white,bg=unibe_bis}%
+  \setbeamercolor{block body}{bg=unibe_black}
+  \setbeamercolor{itemize item}{fg=unibe_bis}
+  \setbeamercolor{itemize subitem}{fg=unibe_bis}
+  \begin{block}#2{\centering \textbf{#1}}}{\end{block}}
+
+\newenvironment<>{box_ter}[1]{%
+  \setbeamercolor{block title}{use=unibe_ter,fg=unibe_black,bg=unibe_ter}%
+  \setbeamercolor{block body}{bg=unibe_black}
+  \setbeamercolor{itemize item}{fg=unibe_ter}
+  \setbeamercolor{itemize subitem}{fg=unibe_ter}
+  \begin{block}#2{\centering \textbf{#1}}}{\end{block}}
+
+\newcommand{\textprim}[1]{\textcolor{unibe_prim}{#1}}
+\newcommand{\textbis}[1]{\textcolor{unibe_bis}{#1}}
+\newcommand{\textter}[1]{\textcolor{unibe_ter}{#1}}
+
+
+% For a title slide to each section
+% \AtBeginSection[]{
+%   \begin{nonumberframe}{Table of contents}{\insertsection}
+%     \centering
+%     \tableofcontents[currentsection,hideothersubsections]
+%   \end{nonumberframe}
+% }
+
+\setbeamertemplate{section in toc}[circle]
+\setbeamertemplate{subsection in toc}[square]
+
+\setbeamerfont{section number projected}{size=\large}
+\setbeamercolor{section number projected}{fg=unibe_black,bg=unibe_white}
+
+% \AtBeginSubsection[]{
+%   \begin{nonumberframe}
+%   \vfill
+%   \centering
+%   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+%     \usebeamerfont{title}\insertsubsectionhead\par%
+%   \end{beamercolorbox}
+%   \vfill
+%   \end{nonumberframe}
+% }
+
+\usepackage[footheight=1em]{beamerthemeboxes}
+
+\newenvironment{nonumberframe}{%
+    \setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{\begin{beamercolorbox}[wd=.99\paperwidth,leftskip=.3cm,rightskip=.3cm]{footlinecolor}%
+    \insertsubtitle ~- \insertshortauthor
+    \end{beamercolorbox}%
+    }%
+    \vskip 0pt%
+    }
+    \begin{frame}[noframenumbering] %Remove the noframenumbering option if you want the counter to be increased on a frame that is not numbered.
+    }{%
+    \end{frame}
+}
+
+\makeatother
+\setbeamertemplate{footline}
+{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=.8\paperwidth,leftskip=.3cm,rightskip=.3cm]{footlinecolor}%
+  \insertsubtitle ~- \insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.19\paperwidth,leftskip=.3cm,rightskip=.3cm]{footlinecolor}%
+    \hfill\insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}
+  }%
+  \vskip 0
+}
+\makeatletter
+
+\title{LIF and Simplified SRM Neurons Encode Signals Into Spikes \\ via a Form of Asynchronous Pulse Sigma-Delta Modulation \\ Young C. Yoon \cite{yoon_lif_2017}}
+\subtitle{GUT meeting 2026-11-10}
+\author[X. Lesage]{Xavier Lesage\\
+Review: Luke Eilers}
+\institute{NeuroTMA, Department of Physiology, University of Bern}
+\date{\today}
+
+\begin{document}
+
+\begin{nonumberframe}
+  % \begin{beamercolorbox}[sep=8pt,center,rounded=true]{title}
+    \centering
+    \usebeamerfont{title}\inserttitle\par%
+    \usebeamerfont{subtitle}\insertsubtitle
+  % \end{beamercolorbox}%
+
+  \vspace{0.3cm}
+
+  \begin{columns}[c]
+    \begin{column}{0.35\paperwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=.35\columnwidth]{Logos/Logo_NeuroTMA_final_white_transparent.png}
+    \end{figure}
+      \vspace{-0.5cm}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.5\columnwidth]{Logos/Unibe_white-transparent_logo.png}
+    \end{figure}
+    \end{column}
+
+    \begin{column}{0.64\paperwidth}
+      \usebeamerfont{author}\insertauthor\par
+      \vspace{0.3cm}
+      \usebeamerfont{institute}\insertinstitute\par
+      \usebeamerfont{date}\insertdate
+    \end{column}
+  \end{columns}
+\end{nonumberframe}
+
+\input{Parts/content.tex}
+
+\appendix
+\begingroup
+  % \addtocounter{part}{-1}
+    \part{Appendices}
+    % \AtBeginSection[]{
+    %     \begin{nonumberframe}{Table of contents}
+    %         \tableofcontents[currentsection,part={2}]
+    %     \end{nonumberframe}
+    % }
+
+    \section{References}
+    \begin{frame}[allowframebreaks]{\insertsection}
+      \printbibliography
+    \end{frame}
+
+    % \input{Parts/backup.tex}
+\endgroup
+
+\end{document}
